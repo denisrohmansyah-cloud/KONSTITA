@@ -1,19 +1,26 @@
-PORTAL AMANDEMEN PPOM 2026 — PROTOTYPE V2
+PORTAL AMANDEMEN PPOM 2026 — PROTOTYPE
 
-Keputusan:
-- Aspirasi umum tanpa login, anonim atau nama ditampilkan.
-- Aspirasi baru menunggu moderasi; hanya yang disetujui tampil di publik.
-- PPOM 2020 adalah dokumen lama/pembanding.
-- PPOM 2026 adalah draft yang sedang diamandemen.
-- Landasan Amandemen menjelaskan alasan perubahan tiap pasal/ayat.
-- Dokumen sumber diedit staf melalui Google Docs.
-- Akses edit staf diberikan melalui akun Google masing-masing.
+Tujuan
+Portal informasi dan partisipasi publik untuk proses Amandemen PPOM 2026.
 
-Uji coba:
-1. Ekstrak ZIP, buka index.html.
-2. Kirim aspirasi di menu Aspirasi Umum.
-3. Masuk Admin DPM dengan kode demo DPM2026.
-4. Setujui aspirasi agar muncul di daftar publik.
+Struktur konten
+- Aspirasi Umum: tanpa login; pengirim boleh anonim atau menampilkan nama. Aspirasi baru masuk antrean moderasi dan hanya yang disetujui admin yang ditampilkan kepada publik.
+- PPOM 2020: dokumen lama sebelum amandemen.
+- PPOM 2026: draft yang sedang diamandemen dan direncanakan dikelola melalui Google Docs.
+- Landasan Amandemen per Pasal: alasan dan dasar perubahan tiap pasal/ayat, dikelola melalui Google Docs.
 
-Batasan:
-Prototype ini menyimpan aspirasi di localStorage browser, bukan server. Kode admin demo tertanam di JavaScript dan tidak aman. Google Docs belum tersambung otomatis. Produksi memerlukan backend, database, autentikasi admin, integrasi Google Drive/Docs API atau publikasi dokumen, dan pengaturan hak akses Google Drive.
+Pengujian prototype
+1. Buka index.html pada browser.
+2. Kirim aspirasi pada menu Aspirasi Umum.
+3. Masuk menu Admin DPM menggunakan kode demo DPM2026.
+4. Setujui aspirasi agar tampil pada daftar publik.
+5. Masukkan URL hasil Google Docs > File > Share > Publish to web pada pengaturan dokumen untuk mencoba pratinjau embed.
+
+Batasan keamanan dan sinkronisasi
+- Aspirasi dan konfigurasi URL Google Docs masih disimpan di localStorage browser ini saja. Tidak tersinkron antar-pengunjung/perangkat.
+- Login Admin DPM dengan kode DPM2026 hanyalah simulasi frontend; kode ada di HTML dan tidak aman.
+- Belum ada database, backend, autentikasi Google, otorisasi per-staf, atau audit log.
+- Integrasi Google Docs yang sebenarnya memerlukan URL publikasi yang dikonfigurasi secara terpusat (misalnya lewat backend/config server). Setelah Google Docs dipublikasikan dengan opsi otomatis republish, perubahan pada dokumen sumber dapat tampil setelah halaman publik diperbarui.
+- Jangan masukkan informasi internal/rahasia ke dokumen yang dipublikasikan untuk web.
+
+Panduan penyiapan Google Docs: lihat GOOGLE_DOCS_SETUP.md.
