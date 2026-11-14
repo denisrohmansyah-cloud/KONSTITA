@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#7650a5">
 <title>KONSTITA — Konstitusi Kita | Amandemen PPOM 2026</title>
 <meta name="description" content="KONSTITA — Konstitusi Kita. Mengenal Aturan, Mengawal Perubahan. Portal Amandemen PPOM 2026.">
-<link rel="icon" type="image/webp" href="assets/logo-konstita.webp">
+<link rel="icon" type="image/webp" href="assets/logo-konstita.png">
 <style>
 :root{--purple:#7650a5;--purple2:#9a78c2;--lav:#eee5f8;--lav2:#f7f3fb;--ink:#2d2140;--muted:#756b80;--line:#e7ddef;--white:#fff;--green:#2d805d;--red:#a64d5b;--shadow:0 12px 35px rgba(74,42,105,.09)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fbf9fd;color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.55}button,input,select,textarea{font:inherit}button{cursor:pointer}.wrap{width:min(1160px,92%);margin:auto}
@@ -31,7 +31,7 @@ footer{background:#38244d;color:white;padding:28px 0;margin-top:30px}.foot{displ
 </head>
 <body>
 <header><div class="wrap nav">
-<a class="brand" href="#" onclick="showPage('home');return false"><img class="brand-logo" src="assets/logo-konstita.webp" alt="Logo KONSTITA"><span class="brand-copy"><strong>KONSTITA</strong><small>KONSTITUSI KITA</small></span></a>
+<a class="brand" href="#" onclick="showPage('home');return false"><img class="brand-logo" src="assets/logo-konstita.png" alt="Logo KONSTITA"><span class="brand-copy"><strong>KONSTITA</strong><small>KONSTITUSI KITA</small></span></a>
 <nav class="links" id="navLinks">
 <button class="active" data-page="home">Beranda</button><button data-page="ppom2020">PPOM 2020</button><button data-page="ppom">PPOM 2026</button><button data-page="landasan">Landasan Amandemen</button><button data-page="aspirasi">Aspirasi Umum</button><button data-page="admin">Admin DPM</button>
 </nav><button class="menu" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
@@ -95,7 +95,7 @@ footer{background:#38244d;color:white;padding:28px 0;margin-top:30px}.foot{displ
 </section>
 </div>
 </div>
-<footer><div class="wrap foot"><div><div style="display:flex;align-items:center;gap:12px"><img src="assets/logo-konstita.webp" alt="Logo KONSTITA" style="width:44px;height:44px;object-fit:contain;border-radius:50%;background:#fff"><div><strong>KONSTITA — KONSTITUSI KITA</strong><br><small>Mengenal Aturan, Mengawal Perubahan.</small></div></div></div><small>© 2026 · Versi prototipe untuk uji coba</small></div></footer>
+<footer><div class="wrap foot"><div><div style="display:flex;align-items:center;gap:12px"><img src="assets/logo-konstita.png" alt="Logo KONSTITA" style="width:44px;height:44px;object-fit:contain;border-radius:50%;background:#fff"><div><strong>KONSTITA — KONSTITUSI KITA</strong><br><small>Mengenal Aturan, Mengawal Perubahan.</small></div></div></div><small>© 2026 · Versi prototipe untuk uji coba</small></div></footer>
 <script>
 const pages=['home','ppom2020','ppom','amend','aspirasi','berkas','landasan','admin'];
 function showPage(id){pages.forEach(p=>document.getElementById(p).classList.toggle('active',p===id));document.querySelectorAll('[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===id));document.getElementById('navLinks').classList.remove('open');window.scrollTo({top:0,behavior:'smooth'});}
