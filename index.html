@@ -44,6 +44,14 @@ footer{background:#38244d;color:white;padding:28px 0;margin-top:30px}.foot{displ
 .footer-bottom small{color:#d6c9e2;font-size:12px}
 @media(max-width:760px){.footer-layout{grid-template-columns:1fr;gap:22px}.footer-logos{justify-content:flex-start}.footer-bottom{grid-column:1}.footer-logo-card{width:calc(50% - 6px);max-width:150px}}
 @media(max-width:390px){.footer-logo-card{width:calc(50% - 6px);min-height:106px}.footer-logo-card img{height:58px}}
+/* Keep all footer marks the same 54px visual size across breakpoints */
+.footer-logos{display:flex;align-items:center;justify-content:flex-end;gap:18px}
+.footer-logo-card{box-sizing:border-box;width:54px;height:54px;min-height:54px;max-width:54px;padding:0;margin:0;background:transparent;border:0;border-radius:0;box-shadow:none;flex:0 0 54px;display:flex;align-items:center;justify-content:center}
+.footer-logo-card img{box-sizing:border-box;width:54px;height:54px;max-width:54px;max-height:54px;object-fit:contain;padding:0;margin:0;background:transparent;border:0;border-radius:0;box-shadow:none}
+.footer-logo-card small{display:none}
+.footer-brand img{box-sizing:border-box;width:54px;height:54px;object-fit:contain;padding:0;background:transparent;border-radius:0;box-shadow:none}
+@media(max-width:760px){.footer-logos{justify-content:flex-start;gap:16px}.footer-logo-card{width:54px;height:54px;min-height:54px;max-width:54px;flex:0 0 54px}.footer-logo-card img{width:54px;height:54px}}
+@media(max-width:390px){.footer-logo-card{width:54px;height:54px;min-height:54px;max-width:54px;flex:0 0 54px}.footer-logo-card img{width:54px;height:54px}}
 .notice{padding:13px 15px;border-radius:12px;background:#fff8e9;border:1px solid #f1dfb8;color:#795b25;font-size:13px;margin:14px 0}
 .adminbar{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:15px}
 .empty{text-align:center;padding:35px;color:var(--muted)}.hidden{display:none!important}
