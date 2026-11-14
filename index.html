@@ -22,6 +22,20 @@ label{display:block;font-size:13px;font-weight:750;margin:13px 0 6px}input,selec
 .status{display:inline-block;padding:4px 9px;border-radius:99px;background:#f2edf8;color:var(--purple);font-size:11px;font-weight:800}.status.ok{background:#e8f5ee;color:var(--green)}.status.wait{background:#fff4df;color:#91651d}.status.no{background:#f9e9ec;color:var(--red)}
 .tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top}th{color:#695b76;background:#faf7fc;font-size:11px;text-transform:uppercase;letter-spacing:.04em}
 footer{background:#38244d;color:white;padding:28px 0;margin-top:30px}.foot{display:flex;justify-content:space-between;gap:20px;align-items:center}.foot small{color:#d6c9e2}
+.footer-layout{display:grid;grid-template-columns:minmax(220px,1fr) minmax(0,2fr);gap:28px 36px;align-items:center}
+.footer-brand{display:flex;align-items:center;gap:14px;min-width:0}
+.footer-brand img{width:54px;height:54px;object-fit:contain;border-radius:50%;background:#fff;padding:4px;flex:none}
+.footer-brand strong{font-size:16px;letter-spacing:.02em}
+.footer-brand p{margin:6px 0 0;color:#d6c9e2;font-size:13px}
+.footer-institution{min-width:0}
+.footer-logos{display:flex;flex-wrap:wrap;justify-content:flex-end;align-items:stretch;gap:12px}
+.footer-logo-card{width:128px;min-height:116px;padding:10px 9px 8px;border-radius:12px;background:rgba(255,255,255,.97);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;box-shadow:0 3px 12px rgba(0,0,0,.12)}
+.footer-logo-card img{width:100%;height:68px;object-fit:contain;display:block}
+.footer-logo-card small{color:#3e3150!important;font-size:10px;line-height:1.2;text-align:center;font-weight:700}
+.footer-bottom{grid-column:1/-1;padding-top:16px;border-top:1px solid rgba(255,255,255,.2);display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.footer-bottom small{color:#d6c9e2;font-size:12px}
+@media(max-width:760px){.footer-layout{grid-template-columns:1fr;gap:22px}.footer-logos{justify-content:flex-start}.footer-bottom{grid-column:1}.footer-logo-card{width:calc(50% - 6px);max-width:150px}}
+@media(max-width:390px){.footer-logo-card{width:calc(50% - 6px);min-height:106px}.footer-logo-card img{height:58px}}
 .notice{padding:13px 15px;border-radius:12px;background:#fff8e9;border:1px solid #f1dfb8;color:#795b25;font-size:13px;margin:14px 0}
 .adminbar{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:15px}
 .empty{text-align:center;padding:35px;color:var(--muted)}.hidden{display:none!important}
@@ -114,7 +128,23 @@ footer{background:#38244d;color:white;padding:28px 0;margin-top:30px}.foot{displ
 </section>
 </div>
 </div>
-<footer><div class="wrap foot"><div><div style="display:flex;align-items:center;gap:12px"><img src="assets/logo-konstita.png" alt="Logo KONSTITA" style="width:44px;height:44px;object-fit:contain;border-radius:50%;background:#fff"><div><strong>KONSTITA — KONSTITUSI KITA</strong><br><small>Mengenal Aturan, Mengawal Perubahan.</small></div></div></div><small>© 2026 · Versi prototipe untuk uji coba</small></div></footer>
+<footer>
+<div class="wrap foot footer-layout">
+  <div class="footer-brand">
+    <img src="assets/logo-konstita.png" alt="Logo utama KONSTITA">
+    <div><strong>KONSTITA — KONSTITUSI KITA</strong><p>Mengenal Aturan, Mengawal Perubahan.</p></div>
+  </div>
+  <div class="footer-institution">
+    <div class="footer-logos" aria-label="Logo kelembagaan">
+      <div class="footer-logo-card"><img src="assets/logo-dpm-dharmasthana.webp" alt="Logo Dharmasthana"><small>DHARMASTHANA</small></div>
+      <div class="footer-logo-card"><img src="assets/logo-poltekkes-semarang.webp" alt="Logo Poltekkes Kemenkes Semarang"><small>POLTEKKES KEMENKES SEMARANG</small></div>
+      <div class="footer-logo-card"><img src="assets/logo-kbm.webp" alt="Logo Keluarga Besar Mahasiswa"><small>KELUARGA BESAR MAHASISWA</small></div>
+      <div class="footer-logo-card"><img src="assets/logo-dpm.webp" alt="Logo Dewan Permusyawaratan Mahasiswa"><small>DEWAN PERMUSYAWARATAN MAHASISWA</small></div>
+    </div>
+  </div>
+  <div class="footer-bottom"><small>© 2026 KONSTITA · Portal Amandemen PPOM 2026</small><small>KBM Poltekkes Kemenkes Semarang</small></div>
+</div>
+</footer>
 <script>
 const pages=['home','ppom2020','ppom','amend','aspirasi','berkas','landasan','admin'];
 function startHeroSlideshow(){const slides=[...document.querySelectorAll('.hero-slide')];const dots=[...document.querySelectorAll('[data-hero-slide]')];if(slides.length<2)return;let current=0;let timer=null;const show=(index)=>{current=(index+slides.length)%slides.length;slides.forEach((el,i)=>el.classList.toggle('active',i===current));dots.forEach((el,i)=>el.classList.toggle('active',i===current))};const restart=()=>{if(timer)clearInterval(timer);timer=setInterval(()=>show(current+1),6500)};dots.forEach((dot)=>dot.addEventListener('click',()=>{show(Number(dot.dataset.heroSlide)||0);restart()}));if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches)restart();}
