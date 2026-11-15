@@ -111,6 +111,101 @@ footer{background:#38244d;color:white;padding:28px 0;margin-top:30px}.foot{displ
   .footer-social-link small{font-size:10px}
 }
 
+
+/* Floating pill navigation */
+header{
+  position:sticky;
+  top:10px;
+  z-index:50;
+  background:transparent;
+  border:0;
+  backdrop-filter:none;
+  -webkit-backdrop-filter:none;
+}
+.nav{
+  position:relative;
+  width:min(1160px,calc(100% - 40px));
+  height:68px;
+  margin:10px auto;
+  padding:7px 12px 7px 16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  border:1px solid rgba(118,80,165,.17);
+  border-radius:999px;
+  background:rgba(255,255,255,.90);
+  box-shadow:0 10px 34px rgba(48,29,67,.13),0 2px 8px rgba(48,29,67,.06);
+  -webkit-backdrop-filter:blur(18px) saturate(150%);
+  backdrop-filter:blur(18px) saturate(150%);
+  transition:box-shadow .25s ease,background .25s ease,border-color .25s ease;
+}
+.nav:hover{
+  background:rgba(255,255,255,.96);
+  border-color:rgba(118,80,165,.25);
+  box-shadow:0 13px 38px rgba(48,29,67,.16),0 2px 8px rgba(48,29,67,.06);
+}
+.brand{flex:0 0 auto;gap:9px;min-width:0}
+.brand-logo{width:46px;height:46px}
+.brand-copy strong{font-size:17px;letter-spacing:.055em}
+.brand-copy small{font-size:9px;letter-spacing:.035em;margin-top:3px}
+.links{display:flex;align-items:center;justify-content:flex-end;gap:3px;min-width:0;flex-wrap:nowrap}
+.links button{
+  padding:9px 11px;
+  border-radius:999px;
+  white-space:nowrap;
+  font-size:12px;
+  line-height:1.15;
+  transition:background .2s ease,color .2s ease,transform .2s ease;
+}
+.links button:hover{transform:translateY(-1px)}
+.menu{
+  display:none;
+  align-items:center;
+  justify-content:center;
+  width:42px;
+  height:42px;
+  flex:0 0 42px;
+  border:1px solid rgba(118,80,165,.16);
+  border-radius:50%;
+  background:var(--lav2);
+  color:var(--purple);
+  padding:0;
+  font-size:21px;
+  line-height:1;
+}
+.menu:focus-visible,.links button:focus-visible,.brand:focus-visible{
+  outline:3px solid rgba(118,80,165,.35);
+  outline-offset:3px;
+}
+@media(max-width:1050px){
+  .nav{width:min(960px,calc(100% - 36px))}
+  .links{display:none;position:absolute;top:calc(100% + 10px);left:0;right:0;z-index:60;padding:10px;max-height:calc(100dvh - 105px);overflow-y:auto;overscroll-behavior:contain;flex-direction:column;align-items:stretch;gap:4px;border:1px solid rgba(118,80,165,.16);border-radius:22px;background:rgba(255,255,255,.97);box-shadow:0 16px 42px rgba(48,29,67,.17);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px)}
+  .links.open{display:flex}
+  .links button{width:100%;min-height:44px;text-align:left;padding:12px 15px;border-radius:14px;font-size:14px}
+  .menu{display:inline-flex}
+}
+@media(max-width:680px){
+  header{top:7px}
+  .nav{width:calc(100% - 26px);height:62px;margin:7px auto;padding:5px 7px 5px 12px;gap:8px}
+  .brand{gap:8px}
+  .brand-logo{width:43px;height:43px}
+  .brand-copy strong{font-size:15px;letter-spacing:.045em}
+  .brand-copy small{font-size:9px}
+  .menu{width:42px;height:42px;flex-basis:42px}
+  .links{top:calc(100% + 8px);border-radius:19px}
+}
+@media(max-width:360px){
+  .nav{width:calc(100% - 20px);padding-left:9px}
+  .brand-copy strong{font-size:14px}
+  .brand-logo{width:40px;height:40px}
+  .menu{width:40px;height:40px;flex-basis:40px}
+}
+@media(prefers-reduced-motion:reduce){
+  .nav,.links button{transition:none}
+  .links button:hover{transform:none}
+}
+
 </style>
 </head>
 <body>
@@ -118,7 +213,7 @@ footer{background:#38244d;color:white;padding:28px 0;margin-top:30px}.foot{displ
 <a class="brand" href="#" onclick="showPage('home');return false"><img class="brand-logo" src="assets/logo-konstita.png" alt="Logo KONSTITA"><span class="brand-copy"><strong>KONSTITA</strong><small>KONSTITUSI KITA</small></span></a>
 <nav class="links" id="navLinks">
 <button class="active" data-page="home">Beranda</button><button data-page="ppom2020">PPOM 2020</button><button data-page="ppom">PPOM 2026</button><button data-page="landasan">Landasan Amandemen</button><button data-page="aspirasi">Aspirasi Umum</button><button data-page="admin">Admin DPM</button>
-</nav><button class="menu" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+</nav><button class="menu" id="mobileNavToggle" type="button" aria-controls="navLinks" aria-expanded="false" aria-label="Buka menu navigasi" onclick="toggleMobileNav()">☰</button>
 </div></header>
 <div class="wrap">
 <section class="hero" id="hero">
@@ -240,8 +335,12 @@ footer{background:#38244d;color:white;padding:28px 0;margin-top:30px}.foot{displ
 <script>
 const pages=['home','ppom2020','ppom','amend','aspirasi','berkas','landasan','admin'];
 function startHeroSlideshow(){const slides=[...document.querySelectorAll('.hero-slide')];const dots=[...document.querySelectorAll('[data-hero-slide]')];if(slides.length<2)return;let current=0;let timer=null;const show=(index)=>{current=(index+slides.length)%slides.length;slides.forEach((el,i)=>el.classList.toggle('active',i===current));dots.forEach((el,i)=>el.classList.toggle('active',i===current))};const restart=()=>{if(timer)clearInterval(timer);timer=setInterval(()=>show(current+1),6500)};dots.forEach((dot)=>dot.addEventListener('click',()=>{show(Number(dot.dataset.heroSlide)||0);restart()}));if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches)restart();}
-function showPage(id){pages.forEach(p=>document.getElementById(p).classList.toggle('active',p===id));document.querySelectorAll('[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===id));document.getElementById('navLinks').classList.remove('open');window.scrollTo({top:0,behavior:'smooth'});}
+function toggleMobileNav(){const nav=document.getElementById('navLinks');const button=document.getElementById('mobileNavToggle');const isOpen=nav.classList.toggle('open');button.setAttribute('aria-expanded',String(isOpen));button.setAttribute('aria-label',isOpen?'Tutup menu navigasi':'Buka menu navigasi');}
+function closeMobileNav(){const nav=document.getElementById('navLinks');const button=document.getElementById('mobileNavToggle');if(nav&&button){nav.classList.remove('open');button.setAttribute('aria-expanded','false');button.setAttribute('aria-label','Buka menu navigasi');}}
+function showPage(id){pages.forEach(p=>document.getElementById(p).classList.toggle('active',p===id));document.querySelectorAll('[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===id));closeMobileNav();window.scrollTo({top:0,behavior:'smooth'});}
 document.querySelectorAll('[data-page]').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMobileNav()});
+document.addEventListener('click',e=>{const header=document.querySelector('header');const nav=document.getElementById('navLinks');if(nav&&nav.classList.contains('open')&&header&&!header.contains(e.target))closeMobileNav()});
 function getAspirations(){try{return JSON.parse(localStorage.getItem('ppom_demo_aspirations')||'[]')}catch(e){return []}}
 function saveAspirations(a){localStorage.setItem('ppom_demo_aspirations',JSON.stringify(a))}
 document.getElementById('aspForm').addEventListener('submit',e=>{e.preventDefault();const f=new FormData(e.target);const item={id:Date.now(),date:new Date().toLocaleString('id-ID'),nama:f.get('anonim')?'Anonim':(f.get('nama')||'Tidak dicantumkan'),email:f.get('anonim')?'':(f.get('email')||''),ormawa:f.get('ormawa')||'',prodi:f.get('prodi')||'',pasal:f.get('pasal'),jenis:f.get('jenis'),judul:f.get('judul'),isi:f.get('isi'),status:'Menunggu Moderasi'};const a=getAspirations();a.unshift(item);saveAspirations(a);e.target.reset();document.getElementById('aspMessage').textContent='Aspirasi tersimpan di antrean moderasi demo. Admin perlu menyetujuinya sebelum tampil di publik.';});
