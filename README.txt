@@ -1,30 +1,21 @@
-KONSTITA — PAKET OPTIMASI MOBILE
+# Pembaruan logo footer KONSTITA
 
 Isi paket:
-1. mobile-optimization.css
-   CSS tambahan untuk meningkatkan tampilan mobile pada header/menu, hero, shortcut beranda,
-   kartu dokumen, formulir aspirasi, tabel admin, pratinjau Google Docs, dan footer.
+- `assets/logo-fl2mi.webp` — logo FL2MI dengan latar transparan, resolusi sumber 1600 × 888.
+- `assets/logo-fl2mi-transparent.png` — salinan PNG transparan berkualitas tinggi.
+- `footer-logo-update.css` — CSS untuk mengatur ukuran dan tata letak.
+- `footer-logo-snippet.html` — blok HTML footer yang diperbarui.
 
-2. mobile-nav-enhancement.js
-   Penyempurnaan kecil navigasi: menu dapat ditutup dengan tombol Escape atau mengetuk area di luar header.
+## Pemasangan
 
-CARA MEMASANG
-A. Buka repository:
-   https://github.com/denisrohmansyah-cloud/KONSTITA
+1. Salin `assets/logo-fl2mi.webp` ke folder `assets` pada repository KONSTITA.
+2. Di `index.html`, cari elemen `<div class="footer-logos" ...>` dan ganti isinya dengan blok di `footer-logo-snippet.html`.
+3. Salin isi `footer-logo-update.css` ke bagian paling akhir tag `<style>` pada `index.html`, setelah aturan CSS footer yang sudah ada.
+4. Commit perubahan ke branch `main`, lalu tunggu GitHub Pages memperbarui halaman.
 
-B. Buka index.html, pilih Edit.
+## Ukuran yang disetel
+- Logo identitas persegi: 54 × 54 px.
+- Logo Poltekkes Kemenkes yang horizontal: lebar 86 px, tinggi kotak 54 px (di layar sangat kecil lebar 78 px).
+- Logo FL2MI: lebar 90 px, tinggi kotak 54 px (di layar sangat kecil lebar 84 px).
 
-C. Cari tag </style> pertama. Buka mobile-optimization.css, salin seluruh isinya,
-   lalu tempel tepat SEBELUM </style>.
-
-D. Cari fungsi showPage(id) dan baris:
-   document.querySelectorAll('[data-page]').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
-   Salin isi mobile-nav-enhancement.js ke bagian setelah baris tersebut.
-
-E. Simpan / Commit changes ke branch main.
-
-CATATAN
-- Jangan hapus CSS yang sudah ada; paket ini ditambahkan di bagian paling akhir agar menjadi override.
-- Jangan mengganti konten atau aset gambar.
-- Setelah GitHub Pages selesai deploy, buka situs dari HP dan lakukan refresh.
-- File ini merupakan patch tambahan, bukan pengganti index.html lengkap.
+Logo memakai `object-fit: contain`; jadi proporsi asli dijaga. Tidak ada kartu, warna latar, atau label teks di belakang/bawah logo.
