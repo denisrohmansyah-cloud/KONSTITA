@@ -57,6 +57,60 @@ footer{background:#38244d;color:white;padding:28px 0;margin-top:30px}.foot{displ
 .empty{text-align:center;padding:35px;color:var(--muted)}.hidden{display:none!important}
 @media(max-width:850px){.links{display:none;position:absolute;top:75px;left:4%;right:4%;background:white;border:1px solid var(--line);border-radius:16px;padding:10px;box-shadow:var(--shadow);flex-direction:column;align-items:stretch}.links.open{display:flex}.links button{text-align:left}.menu{display:block}.quick{grid-template-columns:repeat(2,1fr)}.quick button:last-child{grid-column:span 2}.grid2{grid-template-columns:1fr}.hero-content{padding:38px 27px}.hero{min-height:370px}}
 @media(max-width:520px){.nav{height:66px}.hero{margin-top:14px;border-radius:20px}.hero-content{padding:32px 22px}.hero h1{font-size:37px}.quick{gap:9px}.quick button{padding:15px 12px}.formgrid{grid-template-columns:1fr}.card{padding:17px}.foot{display:block}.foot small{display:block;margin-top:7px}}
+
+/* Footer partner logos and DPM contact links */
+.footer-institution{display:flex;flex-direction:column;align-items:flex-end;gap:18px;min-width:0}
+.footer-logos{display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:14px}
+.footer-logo-card{box-sizing:border-box;width:54px;height:54px;min-height:54px;max-width:54px;flex:0 0 54px;padding:0;margin:0;background:transparent;border:0;border-radius:0;box-shadow:none;display:flex;align-items:center;justify-content:center}
+.footer-logo-card img{box-sizing:border-box;width:54px;height:54px;max-width:54px;max-height:54px;padding:0;margin:0;object-fit:contain;display:block;background:transparent;border:0;border-radius:0;box-shadow:none}
+.footer-logo-card.logo-wide-kemenkes{width:145px;max-width:145px;flex:0 0 145px}
+.footer-logo-card.logo-wide-kemenkes img{width:145px;max-width:145px;height:54px}
+.footer-logo-card.logo-fl2mi{width:98px;max-width:98px;flex:0 0 98px}
+.footer-logo-card.logo-fl2mi img{width:98px;max-width:98px;height:54px}
+.footer-social{width:min(100%,500px);align-self:flex-end}
+.footer-social-title{margin-bottom:8px;color:#e6d9f1;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.footer-social-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.footer-social-link{display:flex;align-items:center;gap:9px;min-width:0;padding:8px 10px;color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.18);border-radius:11px;background:rgba(255,255,255,.055);transition:background .2s ease,border-color .2s ease}
+.footer-social-link:hover{color:#fff;background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.35)}
+.footer-social-link>span:last-child{display:flex;flex-direction:column;gap:3px;min-width:0}
+.footer-social-link strong{font-size:12px;line-height:1.15}
+.footer-social-link small{display:block;overflow:hidden;max-width:100%;margin:0;color:#d6c9e2;font-size:10px;line-height:1.2;text-overflow:ellipsis;white-space:nowrap}
+.social-icon{width:30px;height:30px;flex:0 0 30px;display:grid;place-items:center;border-radius:9px;background:rgba(255,255,255,.12);color:#fff;font-size:21px;font-weight:700}
+.social-icon svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.social-icon svg .social-fill{fill:currentColor;stroke:none}
+.social-note{font-family:Arial,sans-serif;font-size:25px}
+@media(max-width:950px){
+  .footer-logos{justify-content:flex-start;gap:12px}
+  .footer-social{align-self:flex-start}
+}
+@media(max-width:680px){
+  .footer-layout{grid-template-columns:minmax(0,1fr);gap:20px}
+  .footer-institution{align-items:flex-start;gap:18px}
+  .footer-logos{justify-content:flex-start;gap:12px}
+  .footer-logo-card{width:52px;height:52px;min-height:52px;max-width:52px;flex-basis:52px}
+  .footer-logo-card img{width:52px;height:52px;max-width:52px;max-height:52px}
+  .footer-logo-card.logo-wide-kemenkes{width:132px;max-width:132px;flex-basis:132px}
+  .footer-logo-card.logo-wide-kemenkes img{width:132px;max-width:132px;height:52px}
+  .footer-logo-card.logo-fl2mi{width:94px;max-width:94px;flex-basis:94px}
+  .footer-logo-card.logo-fl2mi img{width:94px;max-width:94px;height:52px}
+  .footer-social{width:100%}
+  .footer-social-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .footer-social-link{padding:8px}
+  .footer-social-link small{font-size:9px}
+  .footer-bottom{grid-column:1;display:flex;flex-direction:column;align-items:flex-start;gap:5px}
+}
+@media(max-width:380px){
+  .footer-logos{gap:10px}
+  .footer-logo-card{width:48px;height:48px;min-height:48px;max-width:48px;flex-basis:48px}
+  .footer-logo-card img{width:48px;height:48px;max-width:48px;max-height:48px}
+  .footer-logo-card.logo-wide-kemenkes{width:120px;max-width:120px;flex-basis:120px}
+  .footer-logo-card.logo-wide-kemenkes img{width:120px;max-width:120px;height:48px}
+  .footer-logo-card.logo-fl2mi{width:86px;max-width:86px;flex-basis:86px}
+  .footer-logo-card.logo-fl2mi img{width:86px;max-width:86px;height:48px}
+  .footer-social-grid{grid-template-columns:minmax(0,1fr)}
+  .footer-social-link small{font-size:10px}
+}
+
 </style>
 </head>
 <body>
@@ -153,9 +207,31 @@ footer{background:#38244d;color:white;padding:28px 0;margin-top:30px}.foot{displ
   <div class="footer-institution">
     <div class="footer-logos" aria-label="Logo kelembagaan">
       <div class="footer-logo-card"><img src="assets/logo-dpm-dharmasthana.webp" alt="Logo Dharmasthana"></div>
-      <div class="footer-logo-card"><img src="assets/logo-poltekkes-semarang.webp" alt="Logo Poltekkes Kemenkes Semarang"></div>
+      <div class="footer-logo-card logo-wide-kemenkes"><img src="assets/logo-poltekkes-semarang.webp" alt="Logo Poltekkes Kemenkes Semarang"></div>
       <div class="footer-logo-card"><img src="assets/logo-kbm.webp" alt="Logo Keluarga Besar Mahasiswa"></div>
       <div class="footer-logo-card"><img src="assets/logo-dpm.webp" alt="Logo Dewan Permusyawaratan Mahasiswa"></div>
+      <div class="footer-logo-card logo-fl2mi"><img src="assets/logo-fl2mi.webp" alt="Logo Forum Lembaga Legislatif Mahasiswa Indonesia (FL2MI)"></div>
+    </div>
+    <div class="footer-social">
+      <div class="footer-social-title">Ikuti &amp; Hubungi DPM</div>
+      <div class="footer-social-grid">
+        <a class="footer-social-link" href="https://www.instagram.com/dpmpoltekkessemarang?exln=MTdxN3NxbnNldGExeA==" target="_blank" rel="noopener noreferrer" aria-label="Instagram DPM Poltekkes Semarang">
+          <span class="social-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" class="social-fill"></circle></svg></span>
+          <span><strong>Instagram</strong><small>@dpmpoltekkessemarang</small></span>
+        </a>
+        <a class="footer-social-link" href="https://www.tiktok.com/@dpmpoltekkessmg?_r=1&amp;_t=ZS-9BP5YZkVPLo" target="_blank" rel="noopener noreferrer" aria-label="TikTok DPM Poltekkes Semarang">
+          <span class="social-icon social-note" aria-hidden="true">♪</span>
+          <span><strong>TikTok</strong><small>@dpmpoltekkessmg</small></span>
+        </a>
+        <a class="footer-social-link" href="https://youtube.com/@dpmpoltekkessmg?si=hGnDNLwb8RmhtPEO" target="_blank" rel="noopener noreferrer" aria-label="YouTube DPM Poltekkes Semarang">
+          <span class="social-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="4"></rect><path d="m10 9 5 3-5 3z" class="social-fill"></path></svg></span>
+          <span><strong>YouTube</strong><small>@dpmpoltekkessmg</small></span>
+        </a>
+        <a class="footer-social-link" href="mailto:dpm@poltekkes-smg.ac.id" aria-label="Kirim email ke DPM Poltekkes Semarang">
+          <span class="social-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2.5" y="4.5" width="19" height="15" rx="2"></rect><path d="m3.5 6 8.5 7 8.5-7"></path></svg></span>
+          <span><strong>Email</strong><small>dpm@poltekkes-smg.ac.id</small></span>
+        </a>
+      </div>
     </div>
   </div>
   <div class="footer-bottom"><small>© 2026 KONSTITA · Portal Amandemen PPOM 2026</small><small>KBM Poltekkes Kemenkes Semarang</small></div>
