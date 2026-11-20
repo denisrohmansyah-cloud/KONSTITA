@@ -211,6 +211,93 @@ header{
 .doc-preview-large{height:680px}
 @media(max-width:680px){.doc-preview-frame{height:430px}.doc-preview-large{height:560px}}
 @media(max-width:390px){.doc-preview-frame{height:380px}.doc-preview-large{height:500px}}
+
+/* Admin DPM workspace */
+.admin-gate{display:grid;grid-template-columns:64px minmax(0,1fr) auto;gap:16px;align-items:center;max-width:900px;margin:10px auto 22px;padding:22px}
+.admin-gate-mark{width:58px;height:58px;display:grid;place-items:center;border-radius:17px;background:linear-gradient(145deg,#eee3f8,#dac8eb);color:var(--purple);font-weight:800;letter-spacing:.08em}
+.admin-gate-copy h3,.admin-topbar h3{margin:5px 0 4px}
+.admin-gate-copy p,.admin-topbar p{margin:0}
+.admin-kicker{font-size:10px;color:var(--purple);font-weight:800;letter-spacing:.12em}
+.admin-notice{grid-column:1/-1;margin:0}
+.admin-topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:5px 0 16px}
+.admin-demo-warning{margin-bottom:18px}
+.admin-tabs{display:flex;gap:7px;overflow-x:auto;padding:0 0 12px;margin-bottom:15px;border-bottom:1px solid var(--line);-webkit-overflow-scrolling:touch}
+.admin-tab{flex:0 0 auto;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--muted);padding:9px 14px;font:inherit;font-size:13px;font-weight:700;cursor:pointer}
+.admin-tab.active{background:var(--purple);border-color:var(--purple);color:#fff}
+.admin-tab-panel{min-width:0}
+.admin-stat-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:0 0 16px}
+.admin-stat{padding:17px 18px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(145deg,#fff,#faf7fd);box-shadow:var(--shadow);display:flex;flex-direction:column;gap:7px;min-width:0}
+.admin-stat span{font-size:12px;color:var(--muted);font-weight:650}
+.admin-stat strong{font-size:30px;line-height:1;color:var(--purple);font-variant-numeric:tabular-nums}
+.admin-stat small{font-size:10px;color:var(--muted);line-height:1.35}
+.admin-overview-grid{margin-bottom:15px}
+.admin-card-heading{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.admin-card-heading h3{margin:0}
+.admin-count{flex:0 0 auto;background:var(--lav);color:var(--purple);border-radius:99px;padding:5px 9px;font-size:10px;font-weight:800}
+.admin-guidance h3{margin-top:0}
+.admin-workflow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}
+.admin-workflow>div{display:flex;flex-direction:column;gap:6px;padding:14px;border-radius:13px;background:#faf7fd;border:1px solid var(--line)}
+.admin-workflow>div>span{color:var(--purple);font-size:11px;font-weight:800;letter-spacing:.08em}
+.admin-workflow strong{font-size:13px}
+.admin-workflow small{font-size:11px;line-height:1.45;color:var(--muted)}
+.admin-section-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin:8px 0 14px}
+.admin-section-heading h3{margin:5px 0}
+.admin-section-heading p{margin:0}
+.admin-doc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px;margin-top:14px}
+.admin-doc-card{display:flex;gap:13px;min-width:0;padding:17px;border-radius:16px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow)}
+.admin-doc-icon{width:42px;height:42px;flex:0 0 42px;border-radius:12px;background:var(--lav);color:var(--purple);display:grid;place-items:center;font-size:13px;font-weight:800}
+.admin-doc-body{min-width:0;display:flex;flex-direction:column;align-items:flex-start}
+.admin-doc-type{font-size:9px;color:var(--purple);font-weight:800;letter-spacing:.1em}
+.admin-doc-body h4{font-size:15px;line-height:1.3;margin:5px 0}
+.admin-doc-body p{color:var(--muted);font-size:12px;line-height:1.45;margin:0 0 12px}
+.admin-doc-actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:auto}
+.admin-doc-missing{background:#faf9fc;border-style:dashed}
+.admin-doc-pending{display:inline-flex;padding:5px 9px;border-radius:99px;background:#f7f1e7;color:#856328;font-size:10px;font-weight:800}
+.admin-doc-note{margin-top:14px;font-size:12px;line-height:1.5;color:var(--muted)}
+.admin-asp-tools{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(175px,.8fr) auto auto;gap:8px;margin:12px 0}
+.admin-asp-tools input,.admin-asp-tools select{min-width:0}
+.admin-stat-strip{display:flex;justify-content:space-between;gap:12px;align-items:center;margin:8px 0;color:var(--muted);font-size:12px}
+.admin-empty-inline{font-size:11px}
+.admin-asp-table{min-width:930px}
+.admin-asp-table td{vertical-align:top;max-width:290px;white-space:normal;overflow-wrap:anywhere}
+.admin-asp-table td:last-child{min-width:180px}
+.admin-asp-table select{min-width:145px;margin-bottom:7px}
+.admin-row-actions{display:flex;flex-wrap:wrap;gap:5px}
+.admin-row-actions .btn{font-size:11px;padding:7px 9px}
+.admin-instructions{padding-left:19px;color:var(--muted);font-size:13px;line-height:1.65}
+.admin-instructions li{padding-left:3px;margin:5px 0}
+@media(max-width:850px){
+  .admin-stat-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .admin-workflow{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .admin-doc-grid{grid-template-columns:minmax(0,1fr)}
+}
+@media(max-width:680px){
+  .admin-gate{grid-template-columns:48px minmax(0,1fr);gap:12px;padding:16px}
+  .admin-gate-mark{width:46px;height:46px}
+  .admin-gate>.btn{grid-column:1/-1;width:100%}
+  .admin-notice{grid-column:1/-1;font-size:11px}
+  .admin-topbar{align-items:flex-start}
+  .admin-topbar>.btn{flex:0 0 auto}
+  .admin-stat-grid{gap:8px}
+  .admin-stat{padding:13px;border-radius:13px}
+  .admin-stat strong{font-size:26px}
+  .admin-stat small{font-size:9px}
+  .admin-workflow{grid-template-columns:minmax(0,1fr);gap:8px}
+  .admin-workflow>div{padding:12px}
+  .admin-asp-tools{grid-template-columns:minmax(0,1fr) minmax(120px,.7fr)}
+  .admin-asp-tools input{grid-column:1/-1}
+  .admin-asp-tools .btn{width:100%;min-height:40px}
+  .admin-stat-strip{align-items:flex-start;flex-direction:column;gap:3px}
+  .admin-doc-card{padding:14px;gap:10px}
+  .admin-doc-actions{width:100%}
+  .admin-doc-actions .btn{flex:1 1 auto}
+}
+@media(max-width:390px){
+  .admin-asp-tools{grid-template-columns:1fr}
+  .admin-asp-tools input{grid-column:auto}
+  .admin-topbar{flex-direction:column}
+}
+
 </style>
 </head>
 <body>
@@ -294,17 +381,120 @@ header{
 <div class="card"><div class="callout"><strong>Pendalaman Alasan Amandemen</strong><br><small class="muted">Dokumen yang menjelaskan pendalaman alasan dan pertimbangan perubahan sebagai landasan pembahasan amandemen PPOM.</small></div><p class="hint">Pratinjau dokumen dari Google Docs.</p><iframe class="doc-preview-frame doc-preview-large" src="https://docs.google.com/document/d/1MWbE66MlEydDZoxu_7aCtEWNfKtxozdX/preview" title="Pendalaman Alasan Amandemen" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe><a class="btn small" href="https://docs.google.com/document/d/1MWbE66MlEydDZoxu_7aCtEWNfKtxozdX/preview" target="_blank" rel="noopener noreferrer">Buka dokumen</a></div>
 </section>
 <section id="admin" class="page">
-<div class="pagehead"><div class="kicker">Area pengelola</div><h2>Admin DPM</h2><p>Halaman pengelolaan dokumen, informasi, dan aspirasi dalam portal Amandemen PPOM 2026. Fitur pada versi ini masih berupa demonstrasi frontend.</p></div>
-<div id="adminLogin" class="card" style="max-width:460px"><h3>Masuk mode admin demo</h3><p class="muted">Kode demo: <strong>DPM2026</strong></p><label>Kode akses demo</label><input id="adminCode" type="password" placeholder="Masukkan kode demo"><button class="btn" style="margin-top:12px" onclick="adminLogin()">Masuk</button><p id="loginMsg" class="hint"></p></div>
-<div id="adminPanel" class="hidden"><div class="card" style="margin-bottom:18px"><h3>Pengelolaan Google Docs</h3><p class="muted">Staf mengedit dokumen sumber langsung di Google Docs. Berikan akses Editor kepada akun Google staf melalui menu Bagikan di Google Drive. Untuk menampilkan isi di website, gunakan dokumen yang dipublikasikan untuk web atau integrasi Google Drive API pada backend.</p><div class="notice">Pada prototype, tautan publikasi disimpan lokal di browser ini. Integrasi produksi harus memakai backend; jangan menaruh token atau kredensial Google di frontend.</div>
-<label>Link publikasi web PPOM 2020</label><input id="doc2020Url" placeholder="https://docs.google.com/document/d/.../pub">
-<label>Link publikasi web PPOM 2026</label><input id="doc2026Url" placeholder="https://docs.google.com/document/d/.../pub">
-<label>Link publikasi web Kajian Hukum</label><input id="docKajianUrl" placeholder="https://docs.google.com/document/d/.../pub">
-<label>Link publikasi web Naskah Akademik</label><input id="docNaskahUrl" placeholder="https://docs.google.com/document/d/.../pub">
-<label>Link publikasi web Draft Usul Amandemen</label><input id="docUsulUrl" placeholder="https://docs.google.com/document/d/.../pub">
-<label>Link publikasi web Landasan Amandemen</label><input id="docLandasanUrl" placeholder="https://docs.google.com/document/d/.../pub">
-<button class="btn small" onclick="savePublishedDocs()">Simpan tautan dokumen (demo)</button><p class="hint" id="docsSaveMessage"></p></div><div class="adminbar"><div><strong>Antrean aspirasi masuk</strong><div class="hint">Tersimpan lokal pada browser ini.</div></div><button class="btn danger small" onclick="clearData()">Hapus seluruh data demo</button></div><div class="card"><div class="tablewrap"><table><thead><tr><th>Tanggal</th><th>Pengusul</th><th>Pasal / Judul</th><th>Isi</th><th>Status</th><th>Aksi</th></tr></thead><tbody id="aspRows"></tbody></table></div><div id="noAsp" class="empty">Belum ada aspirasi pada perangkat ini.</div></div></div>
-<div class="notice">Penting: login ini hanya simulasi sisi frontend. Kode akses tertanam di file HTML dan tidak aman untuk data sungguhan. Jangan gunakan untuk operasional atau mengunggah data pribadi.</div>
+<div class="pagehead"><div class="kicker">Area pengelola</div><h2>Admin DPM</h2><p>Pusat pengelolaan dokumen amandemen dan moderasi aspirasi KONSTITA.</p></div>
+
+<div id="adminLogin" class="card admin-gate">
+  <div class="admin-gate-mark">DPM</div>
+  <div class="admin-gate-copy">
+    <span class="admin-kicker">RUANG KERJA PENGELOLA</span>
+    <h3>Panel Admin DPM</h3>
+    <p class="muted">Buka pratinjau panel administrasi untuk menguji pengelolaan dokumen dan moderasi aspirasi.</p>
+  </div>
+  <button class="btn" type="button" onclick="adminLogin()">Buka panel pratinjau <span aria-hidden="true">→</span></button>
+  <div class="notice admin-notice"><strong>Catatan prototype:</strong> tombol ini bukan login Google. Data aspirasi demo hanya tersimpan pada browser yang digunakan. Autentikasi Google dan sinkronisasi antarpengguna memerlukan backend.</div>
+</div>
+
+<div id="adminPanel" class="hidden">
+  <div class="admin-topbar">
+    <div><span class="admin-kicker">DASHBOARD PENGELOLA</span><h3>Ruang Kerja DPM</h3><p class="muted">Kelola dokumen sumber dan tindak lanjuti aspirasi yang masuk.</p></div>
+    <button class="btn ghost small" type="button" onclick="adminLogout()">Keluar panel</button>
+  </div>
+  <div class="notice admin-demo-warning"><strong>Mode pratinjau lokal.</strong> Login Google dan database pusat belum terhubung. Jangan gunakan data pribadi atau data aspirasi sungguhan pada versi ini.</div>
+
+  <div class="admin-tabs" role="tablist" aria-label="Menu administrasi">
+    <button class="admin-tab active" type="button" data-admin-tab="overview" onclick="showAdminTab('overview')">Ringkasan</button>
+    <button class="admin-tab" type="button" data-admin-tab="documents" onclick="showAdminTab('documents')">Dokumen</button>
+    <button class="admin-tab" type="button" data-admin-tab="aspirations" onclick="showAdminTab('aspirations')">Moderasi Aspirasi</button>
+    <button class="admin-tab" type="button" data-admin-tab="staff" onclick="showAdminTab('staff')">Akses Staf</button>
+  </div>
+
+  <div class="admin-tab-panel" id="adminTabOverview">
+    <div class="admin-stat-grid">
+      <div class="admin-stat"><span>Total aspirasi</span><strong id="statTotal">0</strong><small>Data demo pada browser ini</small></div>
+      <div class="admin-stat"><span>Menunggu moderasi</span><strong id="statPending">0</strong><small>Perlu ditinjau</small></div>
+      <div class="admin-stat"><span>Dalam pembahasan</span><strong id="statDiscussion">0</strong><small>Belum diputuskan</small></div>
+      <div class="admin-stat"><span>Disetujui</span><strong id="statApproved">0</strong><small>Tampil pada daftar publik</small></div>
+    </div>
+    <div class="grid2 admin-overview-grid">
+      <div class="card">
+        <div class="admin-card-heading"><h3>Dokumen amandemen</h3><span class="admin-count">5 tautan</span></div>
+        <p class="muted">Lima dokumen Google Docs yang telah diberikan sudah disiapkan pada daftar pengelolaan.</p>
+        <button class="btn soft small" type="button" onclick="showAdminTab('documents')">Kelola dokumen</button>
+      </div>
+      <div class="card">
+        <div class="admin-card-heading"><h3>Antrean aspirasi</h3><span class="admin-count" id="overviewAspCount">0 masuk</span></div>
+        <p class="muted">Periksa masukan, perbarui status, dan setujui aspirasi sebelum ditampilkan kepada publik.</p>
+        <button class="btn soft small" type="button" onclick="showAdminTab('aspirations')">Buka moderasi</button>
+      </div>
+    </div>
+    <div class="card admin-guidance">
+      <h3>Alur kerja Admin DPM</h3>
+      <div class="admin-workflow">
+        <div><span>01</span><strong>Perbarui dokumen</strong><small>Edit dokumen sumber melalui akun Google yang memiliki akses Editor.</small></div>
+        <div><span>02</span><strong>Tinjau aspirasi</strong><small>Baca isi masukan dan periksa keterkaitannya dengan pasal PPOM.</small></div>
+        <div><span>03</span><strong>Tetapkan status</strong><small>Pilih dalam pembahasan, disetujui, atau ditolak sesuai keputusan DPM.</small></div>
+        <div><span>04</span><strong>Publikasikan</strong><small>Hanya aspirasi yang disetujui yang muncul di halaman Aspirasi Umum.</small></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="admin-tab-panel hidden" id="adminTabDocuments">
+    <div class="admin-section-heading"><div><span class="admin-kicker">DOKUMEN SUMBER</span><h3>Pengelolaan Google Docs</h3><p class="muted">Buka dokumen sumber untuk mengedit. Hasil perubahan akan mengikuti dokumen Google Docs yang sama.</p></div></div>
+    <div class="notice">Pastikan akun Google staf sudah diberi izin <strong>Editor</strong> pada dokumen terkait. Tombol edit hanya membuka Google Docs; izin perubahan tetap dikendalikan Google Drive.</div>
+    <div class="admin-doc-grid">
+      <article class="admin-doc-card">
+        <div class="admin-doc-icon">01</div><div class="admin-doc-body"><span class="admin-doc-type">USULAN PERUBAHAN</span><h4>Usul Amandemen</h4><p>Usulan perubahan PPOM sebagai bahan pembahasan amandemen.</p><div class="admin-doc-actions"><a class="btn small" href="https://docs.google.com/document/d/1XiQlXNcTmLEloRhSVx267wnQYtDhnUrc/edit" target="_blank" rel="noopener noreferrer">Edit dokumen ↗</a><a class="btn soft small" href="https://docs.google.com/document/d/1XiQlXNcTmLEloRhSVx267wnQYtDhnUrc/preview" target="_blank" rel="noopener noreferrer">Pratinjau</a></div></div>
+      </article>
+      <article class="admin-doc-card">
+        <div class="admin-doc-icon">02</div><div class="admin-doc-body"><span class="admin-doc-type">LANDASAN PERUBAHAN</span><h4>Pendalaman Alasan Amandemen</h4><p>Pendalaman alasan dan pertimbangan perubahan pasal atau ayat.</p><div class="admin-doc-actions"><a class="btn small" href="https://docs.google.com/document/d/1MWbE66MlEydDZoxu_7aCtEWNfKtxozdX/edit" target="_blank" rel="noopener noreferrer">Edit dokumen ↗</a><a class="btn soft small" href="https://docs.google.com/document/d/1MWbE66MlEydDZoxu_7aCtEWNfKtxozdX/preview" target="_blank" rel="noopener noreferrer">Pratinjau</a></div></div>
+      </article>
+      <article class="admin-doc-card">
+        <div class="admin-doc-icon">03</div><div class="admin-doc-body"><span class="admin-doc-type">DOKUMEN AKADEMIK</span><h4>Naskah Akademik</h4><p>Dokumen akademik pendukung penyusunan usulan amandemen.</p><div class="admin-doc-actions"><a class="btn small" href="https://docs.google.com/document/d/1k2-hlPGxpgzlX5QMW8Unjy5vjP7wKmbB/edit" target="_blank" rel="noopener noreferrer">Edit dokumen ↗</a><a class="btn soft small" href="https://docs.google.com/document/d/1k2-hlPGxpgzlX5QMW8Unjy5vjP7wKmbB/preview" target="_blank" rel="noopener noreferrer">Pratinjau</a></div></div>
+      </article>
+      <article class="admin-doc-card">
+        <div class="admin-doc-icon">04</div><div class="admin-doc-body"><span class="admin-doc-type">PERUMUSAN REGULASI</span><h4>Legistative Drafting</h4><p>Dokumen pendukung perumusan dan penyusunan rancangan amandemen.</p><div class="admin-doc-actions"><a class="btn small" href="https://docs.google.com/document/d/11U7j5eZLdO3lV5FC8MASpZEMVmSDswzA/edit" target="_blank" rel="noopener noreferrer">Edit dokumen ↗</a><a class="btn soft small" href="https://docs.google.com/document/d/11U7j5eZLdO3lV5FC8MASpZEMVmSDswzA/preview" target="_blank" rel="noopener noreferrer">Pratinjau</a></div></div>
+      </article>
+      <article class="admin-doc-card">
+        <div class="admin-doc-icon">05</div><div class="admin-doc-body"><span class="admin-doc-type">KAJIAN HUKUM</span><h4>Kajian Hukum PPOM 2020</h4><p>Dokumen kajian hukum untuk PPOM 2020 sebagai bahan pembanding.</p><div class="admin-doc-actions"><a class="btn small" href="https://docs.google.com/document/d/1KADNDHGjeSrek4Kbrhe7ZwMDBmY7CRsZ/edit" target="_blank" rel="noopener noreferrer">Edit dokumen ↗</a><a class="btn soft small" href="https://docs.google.com/document/d/1KADNDHGjeSrek4Kbrhe7ZwMDBmY7CRsZ/preview" target="_blank" rel="noopener noreferrer">Pratinjau</a></div></div>
+      </article>
+      <article class="admin-doc-card admin-doc-missing">
+        <div class="admin-doc-icon">+</div><div class="admin-doc-body"><span class="admin-doc-type">DOKUMEN BELUM DITERIMA</span><h4>PPOM 2020 dan Draft PPOM 2026</h4><p>Tambahkan tautan dokumen sumber apabila berkas resmi versi lama dan draft lengkap 2026 sudah tersedia.</p><span class="admin-doc-pending">Menunggu tautan dokumen</span></div>
+      </article>
+    </div>
+    <div class="card admin-doc-note"><strong>Catatan pembaruan:</strong> konten dokumen dikelola di Google Docs, bukan diedit di HTML website. Untuk menampilkan perubahan terbaru secara publik, dokumen harus tetap memiliki izin lihat yang sesuai atau menggunakan versi publikasi web.</div>
+  </div>
+
+  <div class="admin-tab-panel hidden" id="adminTabAspirations">
+    <div class="admin-section-heading"><div><span class="admin-kicker">PARTISIPASI MAHASISWA</span><h3>Moderasi Aspirasi</h3><p class="muted">Tinjau setiap aspirasi sebelum menentukan apakah masukan dapat dipublikasikan.</p></div></div>
+    <div class="admin-asp-tools">
+      <input id="aspSearch" type="search" placeholder="Cari nama, Ormawa, pasal, atau isi aspirasi..." oninput="renderAdmin()">
+      <select id="aspStatusFilter" onchange="renderAdmin()"><option value="">Semua status</option><option>Menunggu Moderasi</option><option>Dalam Pembahasan</option><option>Disetujui</option><option>Ditolak</option></select>
+      <button class="btn soft small" type="button" onclick="renderAdmin()">Muat ulang</button>
+      <button class="btn ghost small" type="button" onclick="exportAspirations()">Ekspor CSV</button>
+    </div>
+    <div class="admin-stat-strip"><span id="aspResultCount">0 aspirasi</span><span id="noAsp" class="admin-empty-inline">Belum ada aspirasi pada browser ini.</span></div>
+    <div class="tablewrap admin-table-wrap"><table class="admin-asp-table"><thead><tr><th>Tanggal</th><th>Pengusul</th><th>Ormawa / Prodi</th><th>Pasal / Judul</th><th>Isi Aspirasi</th><th>Status</th><th>Aksi</th></tr></thead><tbody id="aspRows"></tbody></table></div>
+    <p class="hint">Perubahan status pada versi prototype hanya tersimpan di browser ini. Aspirasi baru dari browser lain belum tersinkron ke panel ini.</p>
+  </div>
+
+  <div class="admin-tab-panel hidden" id="adminTabStaff">
+    <div class="admin-section-heading"><div><span class="admin-kicker">OTORISASI PENGELOLA</span><h3>Akses Staf</h3><p class="muted">Pengaturan akses Google untuk anggota tim pengelola dokumen.</p></div></div>
+    <div class="grid2">
+      <div class="card">
+        <h3>Berikan akses Google Docs</h3>
+        <ol class="admin-instructions"><li>Buka salah satu dokumen dari menu <strong>Dokumen</strong>.</li><li>Pilih tombol <strong>Bagikan</strong> pada Google Docs.</li><li>Masukkan alamat Gmail staf yang ditunjuk.</li><li>Ubah peran menjadi <strong>Editor</strong>, lalu kirim undangan.</li></ol>
+        <p class="hint">Akses perlu diberikan pada setiap dokumen yang harus diedit oleh staf.</p>
+      </div>
+      <div class="card">
+        <h3>Login Admin dengan Google</h3>
+        <span class="admin-doc-pending">Belum dikonfigurasi</span>
+        <p class="muted" style="margin-top:12px">Agar panel admin hanya dapat dibuka oleh akun staf yang diizinkan, KONSTITA memerlukan Google OAuth atau Firebase Authentication serta backend untuk memverifikasi akun dan menyimpan data secara terpusat.</p>
+        <div class="notice">Jangan menaruh Client Secret, service-account key, atau token Google di file HTML publik.</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
 </section>
 </div>
 </div>
@@ -359,7 +549,14 @@ document.addEventListener('click',e=>{const header=document.querySelector('heade
 function getAspirations(){try{return JSON.parse(localStorage.getItem('ppom_demo_aspirations')||'[]')}catch(e){return []}}
 function saveAspirations(a){localStorage.setItem('ppom_demo_aspirations',JSON.stringify(a))}
 document.getElementById('aspForm').addEventListener('submit',e=>{e.preventDefault();const f=new FormData(e.target);const item={id:Date.now(),date:new Date().toLocaleString('id-ID'),nama:f.get('anonim')?'Anonim':(f.get('nama')||'Tidak dicantumkan'),email:f.get('anonim')?'':(f.get('email')||''),ormawa:f.get('ormawa')||'',prodi:f.get('prodi')||'',pasal:f.get('pasal'),jenis:f.get('jenis'),judul:f.get('judul'),isi:f.get('isi'),status:'Menunggu Moderasi'};const a=getAspirations();a.unshift(item);saveAspirations(a);e.target.reset();document.getElementById('aspMessage').textContent='Aspirasi tersimpan di antrean moderasi demo. Admin perlu menyetujuinya sebelum tampil di publik.';});
-function adminLogin(){if(document.getElementById('adminCode').value==='DPM2026'){document.getElementById('adminLogin').classList.add('hidden');document.getElementById('adminPanel').classList.remove('hidden');renderAdmin();}else document.getElementById('loginMsg').textContent='Kode demo tidak sesuai.'}
+function adminLogin(){document.getElementById('adminLogin').classList.add('hidden');document.getElementById('adminPanel').classList.remove('hidden');showAdminTab('overview');renderAdmin()}
+function adminLogout(){document.getElementById('adminPanel').classList.add('hidden');document.getElementById('adminLogin').classList.remove('hidden')}
+function showAdminTab(name){const names=['overview','documents','aspirations','staff'];names.forEach(key=>{const panel=document.getElementById('adminTab'+key.charAt(0).toUpperCase()+key.slice(1));const tab=document.querySelector('[data-admin-tab="'+key+'"]');if(panel)panel.classList.toggle('hidden',key!==name);if(tab)tab.classList.toggle('active',key===name)});if(name==='aspirations')renderAdmin()}
+function setAspirationStatus(id,status){const all=getAspirations();const item=all.find(x=>String(x.id)===String(id));if(!item)return;item.status=status;saveAspirations(all);renderAdmin();renderPublicAspirations()}
+function deleteAspiration(id){if(!confirm('Hapus aspirasi demo ini dari browser?'))return;const all=getAspirations().filter(x=>String(x.id)!==String(id));saveAspirations(all);renderAdmin();renderPublicAspirations()}
+function csvEscape(value){const s=String(value??'');return '"'+s.replace(/"/g,'""')+'"'}
+function exportAspirations(){const rows=getAspirations();if(!rows.length){alert('Belum ada aspirasi untuk diekspor.');return}const headers=['Tanggal','Nama','Email','Ormawa','Program Studi','Pasal/Ayat','Jenis','Judul','Isi','Status'];const lines=[headers,...rows.map(x=>[x.date,x.nama,x.email,x.ormawa,x.prodi,x.pasal,x.jenis,x.judul,x.isi,x.status])].map(row=>row.map(csvEscape).join(','));const blob=new Blob(['\uFEFF'+lines.join('\r\n')],{type:'text/csv;charset=utf-8;'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='aspirasi-konstita-demo.csv';document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url)}
+function renderAdmin(){const all=getAspirations();const count=(status)=>all.filter(x=>x.status===status).length;const setText=(id,value)=>{const el=document.getElementById(id);if(el)el.textContent=value};setText('statTotal',all.length);setText('statPending',count('Menunggu Moderasi'));setText('statDiscussion',count('Dalam Pembahasan'));setText('statApproved',count('Disetujui'));setText('overviewAspCount',all.length+' masuk');const search=(document.getElementById('aspSearch')?.value||'').trim().toLowerCase();const filter=document.getElementById('aspStatusFilter')?.value||'';const filtered=all.filter(x=>{const values=[x.date,x.nama,x.email,x.ormawa,x.prodi,x.pasal,x.jenis,x.judul,x.isi,x.status].join(' ').toLowerCase();return(!search||values.includes(search))&&(!filter||x.status===filter)});const body=document.getElementById('aspRows');if(!body)return;body.textContent='';setText('aspResultCount',filtered.length+' dari '+all.length+' aspirasi');const empty=document.getElementById('noAsp');if(empty)empty.textContent=all.length?(filtered.length?'':'Tidak ada aspirasi yang cocok dengan pencarian atau filter.'):'Belum ada aspirasi pada browser ini.';if(empty)empty.style.display=filtered.length?'none':'block';filtered.forEach(x=>{const tr=document.createElement('tr');const addCell=(value)=>{const td=document.createElement('td');td.textContent=value||'—';tr.appendChild(td);return td};addCell(x.date);const who=addCell(x.nama||'Tidak dicantumkan');if(x.email&&x.nama!=='Anonim'){const small=document.createElement('small');small.className='admin-cell-sub';small.textContent=x.email;who.appendChild(document.createElement('br'));who.appendChild(small)}addCell([x.ormawa,x.prodi].filter(Boolean).join(' · '));addCell([x.pasal,x.judul].filter(Boolean).join(' — '));addCell(x.isi);const statusCell=addCell(x.status);statusCell.className='admin-status-cell';const select=document.createElement('select');['Menunggu Moderasi','Dalam Pembahasan','Disetujui','Ditolak'].forEach(v=>{const option=document.createElement('option');option.value=v;option.textContent=v;select.appendChild(option)});select.value=x.status;select.addEventListener('change',()=>setAspirationStatus(x.id,select.value));statusCell.appendChild(select);const action=addCell('');const actions=document.createElement('div');actions.className='admin-row-actions';if(x.status!=='Disetujui'){const approve=document.createElement('button');approve.type='button';approve.className='btn small';approve.textContent='Setujui';approve.addEventListener('click',()=>setAspirationStatus(x.id,'Disetujui'));actions.appendChild(approve)}if(x.status!=='Ditolak'){const reject=document.createElement('button');reject.type='button';reject.className='btn danger small';reject.textContent='Tolak';reject.addEventListener('click',()=>setAspirationStatus(x.id,'Ditolak'));actions.appendChild(reject)}const remove=document.createElement('button');remove.type='button';remove.className='btn ghost small';remove.textContent='Hapus';remove.addEventListener('click',()=>deleteAspiration(x.id));actions.appendChild(remove);action.appendChild(actions);tr.appendChild(action);body.appendChild(tr)})}
 function normalizeGoogleDocUrl(url){if(!url)return '';try{const u=new URL(url);if(u.protocol!=='https:'||u.hostname!=='docs.google.com')return '';if(!/^\/document\/d\/e\/[^/]+\/pub\/?$/.test(u.pathname))return '';u.searchParams.set('embedded','true');return u.toString()}catch(e){return ''}}
 function savePublishedDocs(){const urls={u2020:document.getElementById('doc2020Url').value.trim(),u2026:document.getElementById('doc2026Url').value.trim(),ukajian:document.getElementById('docKajianUrl').value.trim(),unaskah:document.getElementById('docNaskahUrl').value.trim(),uusul:document.getElementById('docUsulUrl').value.trim(),uland:document.getElementById('docLandasanUrl').value.trim()};const entries=Object.entries(urls).filter(([,v])=>v);const invalid=entries.filter(([,v])=>!normalizeGoogleDocUrl(v));if(invalid.length){document.getElementById('docsSaveMessage').textContent='Gunakan URL hasil File > Share > Publish to web dari Google Docs, bukan URL /edit.';return;}localStorage.setItem('ppom_demo_published_docs',JSON.stringify(urls));applyPublishedDocs();document.getElementById('docsSaveMessage').textContent='Tautan publikasi diterapkan untuk preview di browser ini saja. Belum tersimpan ke server.'}
 function applyPublishedDocs(){let u={};try{u=JSON.parse(localStorage.getItem('ppom_demo_published_docs')||'{}')}catch(e){};const docs=[['u2020','ppom2020Frame','ppom2020Embed','doc2020Url'],['u2026','ppom2026Frame','ppom2026Viewer','doc2026Url'],['ukajian','ppomKajianFrame','ppomKajianViewer','docKajianUrl'],['unaskah','ppomNaskahFrame','ppomNaskahViewer','docNaskahUrl'],['uusul','ppomUsulFrame','ppomUsulViewer','docUsulUrl'],['uland','landasanFrame','landasanViewer','docLandasanUrl']];docs.forEach(([key,frameId,viewerId,inputId])=>{const url=normalizeGoogleDocUrl(u[key]||'');const frame=document.getElementById(frameId);const viewer=document.getElementById(viewerId);if(frame&&viewer&&url){frame.src=url;frame.classList.remove('hidden');viewer.classList.add('hidden')}const input=document.getElementById(inputId);if(input)input.value=u[key]||''})}
